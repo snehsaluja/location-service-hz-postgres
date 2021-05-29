@@ -1,17 +1,22 @@
 package com.postgres.poc.locationservicepostgres.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Country {
+@Builder(toBuilder = true)
+@AllArgsConstructor
+public class Country implements Serializable {
 
     @Id
     private String code;
